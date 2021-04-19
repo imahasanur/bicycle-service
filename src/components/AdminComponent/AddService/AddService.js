@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 
 const AddService = () => {
+    const [isAdded, setIsAdded]= useState(false);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { register, handleSubmit } = useForm();
     const [imageUrl, setImageUrl] = useState([null]);
@@ -21,6 +22,7 @@ const AddService = () => {
       .then(res => res.json())
       .then(data => {
         if(data){
+          setIsAdded(true);
           // window.location.reload(false);
         }
       })
@@ -50,14 +52,16 @@ const AddService = () => {
                 <input type="text"  defaultValue={loggedInUser.email} {...register("email")} placeholder="email..." required/>
               </div>
             </div>
-            <div className="row p-2">
-              <div className="col-8 col-sm-5 col-md-7">
-                <input type="text"  {...register("description")} placeholder="description ..." required/>
-              </div>
-            </div>
+
             <div className="row p-2">
               <div className="col-8 col-sm-5 col-md-7">
                 <input type="text"  {...register("name")} placeholder="service name .." required />
+              </div>
+            </div>
+            
+            <div className="row p-2">
+              <div className="col-8 col-sm-5 col-md-7">
+                <input type="text"  {...register("description")} placeholder="description ..." required/>
               </div>
             </div>
 
@@ -77,6 +81,7 @@ const AddService = () => {
               <input type="submit" value="Add Service" className="btn btn-outline-success " />
             </div>
             </form>
+            {isAdded && <p>Service added successfully</p>}
           </div>
             
         </div>

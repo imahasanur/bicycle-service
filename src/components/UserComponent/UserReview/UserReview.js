@@ -8,6 +8,7 @@ const UserReview = () => {
   const[loggedInUser, setLoggedInUser]= useContext(UserContext);
   const { register, handleSubmit } = useForm();
   const [imageUrl, setImageUrl] = useState([null]);
+  const [isReviewed, setIsReviewed] = useState(false);
   const onSubmit = data =>{
     data.img = imageUrl;
     fetch('https://immense-wildwood-36980.herokuapp.com/addReview', {
@@ -20,7 +21,7 @@ const UserReview = () => {
     .then(res => res.json())
     .then(data => {
       if(data){
-        console.log("Got review? ", data);
+        setIsReviewed(true);
         // window.location.reload(false);
       }
     })
@@ -71,6 +72,7 @@ const UserReview = () => {
           <input type="submit" value="Post Review" className="btn btn-outline-success " />
         </div>
       </form>
+      {isReviewed && <p>Review Posted</p>}
       </div>
     </div>
   );

@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const ManageServices = () => {
     const [serviceData, setServiceData] = useState([])
@@ -26,12 +28,12 @@ const ManageServices = () => {
 
       }
     return (
-        <div>
+        <div >
           <div className="d-flex justify-content-between p-2">
             <p>Manage service</p>
             <p>{loggedInUser?.name}</p>
           </div>
-          <div>
+          <div className="container-fluid">
             <table class="table">
         <thead>
             <tr>
@@ -55,7 +57,7 @@ const ManageServices = () => {
                 <td>{price}</td>
                 <td>{description}</td>
                 <td><img src={img} alt="" style={{height:'80px', width:'80px'}} /></td>
-                <td onClick={()=>handleDelete({_id})}>Delete</td>
+                <td onClick={()=>handleDelete({_id})}> <FontAwesomeIcon icon={faTrash} />Delete</td>
               </tr>
               )
               })

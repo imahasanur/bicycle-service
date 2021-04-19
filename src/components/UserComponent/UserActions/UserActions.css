@@ -4,23 +4,25 @@
 
 }
 
-.sidebar{
+.user-sidebar{
     width:25%;
     min-height:700px;
-    background:darkcyan;
+    background: skyblue;
 }
 
-.sidebar ul li{
+.user-sidebar ul li{
     padding:0px 0px;
     margin:0px 0px;
     list-style-type: none;
+    color: blueviolet;
 }
 
-.sidebar ul{
+.user-sidebar ul{
     padding:10px 5px;
     margin:20px 0px;
 }
 
 .user-action-container{
     width:75%;
+    background: whitesmoke;
 }

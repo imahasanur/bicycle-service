@@ -3,6 +3,7 @@ import { UserContext } from '../../../App';
 import { useForm } from "react-hook-form";
 
 const MakeAdmin = () => {
+    const [isAdded, setIsAdded] = useState(false);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { register, handleSubmit } = useForm();
     const onSubmit = data =>{
@@ -17,6 +18,7 @@ const MakeAdmin = () => {
       .then(res => res.json())
       .then(data => {
         if(data){
+          setIsAdded(true);
           // window.location.reload(false);
         }
       })
@@ -24,7 +26,7 @@ const MakeAdmin = () => {
     }
   
     return (
-        <div>
+        <div className="container-fluid">
           <div className="d-flex justify-content-between p-2">
             <p>Add Admin</p>
             <p>{loggedInUser?.name}</p>
@@ -45,6 +47,7 @@ const MakeAdmin = () => {
               <input type="submit" value="Add Admin" className="btn btn-outline-success " />
             </div>
             </form>
+            {isAdded && <p>An Admin Added SuccessFully</p>}
           </div>  
         </div>
       );

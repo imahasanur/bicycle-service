@@ -1,6 +1,6 @@
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { UserContext } from '../../../App';
 import StripeCard from '../StripeCard/StripeCard';
@@ -9,6 +9,7 @@ const stripePromise = loadStripe("pk_test_51IhI5zBZhWQhSLfZfr3c5CWf7nUS49BK7hGQl
 
 const Booking = ({bookingService}) => {
 
+  const [isPaid, setIsPaid] = useState(false);
   const {_id, name, description, price, img, status} = bookingService;
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const { register, handleSubmit } = useForm();
@@ -27,7 +28,12 @@ const Booking = ({bookingService}) => {
       body:JSON.stringify(newBookings)
     })
     .then(res => res.json())
-    .then(result => console.log("result", result))
+    .then(result =>{
+      if(result){
+        setIsPaid(true);
+      }
+
+    })
     
   };
 
@@ -74,6 +80,7 @@ const Booking = ({bookingService}) => {
         <input type="submit" value="Pay" className="btn btn-outline-success " />
       </div>
     </form>
+    {isPaid && <p>Successfully Placed Booking with ${price}</p>}
 
     </div>
     

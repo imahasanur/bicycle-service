@@ -6,6 +6,9 @@ import Booking from '../Booking/Booking';
 import BookingList from '../BookingList/BookingList';
 import UserReview from '../UserReview/UserReview';
 import { useParams } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faList, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-regular-svg-icons';
 
 
 const UserActions = () => {
@@ -23,15 +26,15 @@ const UserActions = () => {
   return (
     <div className="user-container">
 
-      <div className="sidebar text-white">
+      <div className="user-sidebar">
         <div>
           <img src={logo} alt="logo" style={{height:'50px', width:'70px', borderRadius:'50%'}} />
           <p>bicycle-service</p>
         </div>
         <ul>
-            <li onClick={()=> setSelectedOption("booking")}>Booking</li>
-            <li onClick={()=> setSelectedOption("booking-list")}>Booking List</li>
-            <li onClick={()=> setSelectedOption("review")}>Review</li>
+            <li onClick={()=> setSelectedOption("booking")}> <FontAwesomeIcon icon={faShoppingCart} /> Booking</li>
+            <li onClick={()=> setSelectedOption("booking-list")}><FontAwesomeIcon icon={faList} /> Booking List</li>
+            <li onClick={()=> setSelectedOption("review")}><FontAwesomeIcon icon={faStar} /> Review</li>
         </ul>
       </div>
       <div className="user-action-container">

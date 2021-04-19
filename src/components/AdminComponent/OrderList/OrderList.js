@@ -3,7 +3,7 @@ import React from 'react';
 const OrderList = ({orderList, handleClick}) => {
 
     return (
-      <div>
+      <div >
         <table class="table">
         <thead>
             <tr>
