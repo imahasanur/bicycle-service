@@ -1,0 +1,26 @@
+.user-container{
+    display:flex;
+    width:100%;
+
+}
+
+.sidebar{
+    width:25%;
+    min-height:700px;
+    background:darkcyan;
+}
+
+.sidebar ul li{
+    padding:0px 0px;
+    margin:0px 0px;
+    list-style-type: none;
+}
+
+.sidebar ul{
+    padding:10px 5px;
+    margin:20px 0px;
+}
+
+.user-action-container{
+    width:75%;
+}

@@ -1,0 +1,18 @@
+.header-container{
+    background-image:url(../../../images/banner.jpg);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    min-height:550px;
+
+}
+
+.header-main{
+    min-height:400px;
+}
+
+.header-main-content{
+    min-height:200px;
+    background-color: #FBDBCF;
+    color:palevioletred;
+    border-radius:5px;
+}

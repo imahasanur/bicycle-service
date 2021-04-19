@@ -1,0 +1,14 @@
+.service-card{
+    background-color:#FEEAE7;
+    color:purple;
+    border-top-left-radius:22%;
+    border-top-right-radius:22%;
+    border-bottom-left-radius: 12%;
+    border-bottom-right-radius: 12%;
+    border:2px solid whitesmoke;
+}
+
+
+.service-card-body{
+
+}
