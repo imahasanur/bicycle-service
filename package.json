@@ -24,6 +24,7 @@
     "react-spring": "^9.1.1",
     "react-stripe-hooks": "^1.4.0",
     "react-transition-group": "^4.4.1",
+    "stripe": "^8.144.0",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
