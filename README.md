@@ -5,7 +5,21 @@ An user can book bicycle services & An admin will mange orders
 
 ## Features
 
-In this project there are two panel 1.Admin 2. User panel 
+In this project there are two panel 1.User 2. Admin
+
+User panel: 
+1. An user can select any bicycle service
+A logged in user can perform these tasks:
+2. An user can see all previous bookings with current one's status.
+3. An can complete order with react stripe payment gateway.
+4. An user can give feedback about services will be added to home section.
+
+Admin panel: 
+A logged-in admin can perform these tasks:
+1. An admin can make another admin 
+2. An admin can see all order list
+3. An admin can change Order status
+4. An admin can add & delete a service 
 
 User can book any service .After login user will redirected to user dashboard and can show his all booking list, can add review.Use will complete his booking method by making payment using stripe.
 An admin can see all order list and will update order status and can make another admin also can delete and add  a service 
@@ -19,6 +33,7 @@ Server side: Node js, Express js, Monogo DB atlas(database), Firebase(hosting cl
 ## Live Site
 
 live site link [bicycle-service-app](https://bicycle-service-6512c.firebaseapp.com/)
+
 
 ## Connect with me
 portfolio site[ahasanur-rahman.com](https://ahasanur-rahman.web.app/)
