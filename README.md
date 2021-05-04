@@ -21,8 +21,7 @@ A logged-in admin can perform these tasks:
 3. An admin can change Order status
 4. An admin can add & delete a service 
 
-User can book any service .After login user will redirected to user dashboard and can show his all booking list, can add review.Use will complete his booking method by making payment using stripe.
-An admin can see all order list and will update order status and can make another admin also can delete and add  a service 
+
 
 ## Used Technology
 
